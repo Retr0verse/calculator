@@ -1,17 +1,28 @@
-//addition calculation
+//addition calculation - may need to make this for infinite numbers/arrays
 
 const add = function(a,b){
-    let answer = a + b;
-    return answer
+    let sum = a + b;
+    return sum
 }
 
 add(3,2);
 
-//subtract calculation
+//subtract calculation - may need to make this for infinite numbers/arrays
 
+const subtract = function(a,b){
+    let difference = a - b;
+    return difference
+}
 
+subtract(3,2);
 
 //multiply calculation
 
+const multiply = function(a,b){
+    let product = a * b;
+    return product
+}
+
+multiply(3,2);
 
 //divide calculation
