@@ -26,3 +26,15 @@ const multiply = function(a,b){
 multiply(3,2);
 
 //divide calculation
+
+const divide = function(a,b){
+    let quotient = a / b;
+    return quotient
+}
+
+divide(3,2);
+
+//operate function that calls mathematic functions
+
+const operate = function(a,b){
+    
