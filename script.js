@@ -34,7 +34,16 @@ const divide = function(a,b){
 
 divide(3,2);
 
-//operate function that calls mathematic functions
+//variables for both numbers and operator:
+
+var a = 0;
+var b = 0;
+var operator = '';
+
+
+//operate function that calls mathematic functions, takes operator and 2 numbers
 
 const operate = function(a,b){
-    
+    let operator = 
+    return 
+};
