@@ -1,3 +1,11 @@
+// select buttons
+
+const buttons = document.querySelectorAll('button');
+
+// select display
+
+const display = document.querySelector('.display');
+
 //addition calculation - may need to make this for infinite numbers/arrays
 
 const add = function (a, b) {
@@ -49,3 +57,6 @@ const operate = function (num1, num2, operator) {
       return divide(num1, num2);
   }
 };
+
+//populate calculator display when clicking number buttons
+document.getElementById(num1).click();
