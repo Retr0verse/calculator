@@ -17,6 +17,7 @@ display: flex;
     height: 600px;
     margin-bottom: 100px;
     border-radius: 10px;
+    box-shadow: black 2px 2px 5px;
 
 }
 .calcInt {
@@ -25,25 +26,25 @@ display: flex;
 }
 input {
     font-size: 40px;
-    font-family:'Bungee', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 435px;
 margin-top: 25px;
 height: 105px;
 border-radius: 5px;
 background-color: #FEFEFA;
-box-shadow: black 5px 5px;
+box-shadow: black 5px 5px 1px;
 }
 button {
     margin-top: 35px;
     margin-left: 5px;
     margin-right: 5px;
     font-size: 40px;
-    font-family:'Bungee', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 100px;
     height: 70px;
     border-radius: 5px;
     background-color: #D3D3D1;
-    box-shadow: black 5px 5px;
+    box-shadow: black 5px 5px 1px;
 }
 .operator {
     background-color: #E4C56B;
