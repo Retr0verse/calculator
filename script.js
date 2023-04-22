@@ -1,10 +1,12 @@
-// select buttons
+// select buttons DOM 
 
-const buttons = document.querySelectorAll('button');
+const numberBtn = document.querySelectorAll('.number');
+const operatorBtn = document.querySelectorAll('.operator');
+const clearBtn = document.querySelectorAll('.clear');
+const equalBtn = document.querySelectorAll('.equal');
+const displayScreen = document.querySelector('.display');
 
-// select display
 
-const display = document.querySelector('.display');
 
 //addition calculation - may need to make this for infinite numbers/arrays
 
