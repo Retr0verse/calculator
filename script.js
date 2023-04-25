@@ -4,12 +4,8 @@ const numberBtn = document.querySelectorAll('.number');
 const operatorBtn = document.querySelectorAll('.operator');
 const clearBtn = document.querySelectorAll('.clear');
 const equalBtn = document.querySelectorAll('.equal');
-const showSolution = document.querySelectorAll('.solution');
-const currentOperand = document.querySelector('current-operand');
-const prevOperand = document.querySelector('prev-operand');
+const returnSolution = document.querySelectorAll('.solution');
 
-currentOperand.textContent = " ";
-prevOperand.textContent = " ";
 //addition calculation - may need to make this for infinite numbers/arrays
 
 const add = function (a, b) {
@@ -63,4 +59,3 @@ const operate = function (num1, num2, operator) {
 };
 
 //populate calculator display when clicking number buttons
-document.getElementById(num1).click();
