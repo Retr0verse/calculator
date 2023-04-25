@@ -7,7 +7,7 @@ body {
     justify-content: center;
 }
 .calcExt {
-display: flex;
+
     justify-content: space-evenly;
     align-items: flex-start;
     border: 5px solid black;
@@ -18,11 +18,13 @@ display: flex;
     margin-bottom: 100px;
     border-radius: 10px;
     box-shadow: black 2px 2px 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
 .calcInt {
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr 2fr;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
 }
 input {
     font-size: 40px;
