@@ -13,13 +13,9 @@
   </head>
   <body>
     <!--Create basic calc layout, 4 operators, all digits, equals key, and clear button -->
-    <div class="calcExt">
+    <div id="calcExt" class="calcExt">
       <div class="display">
-        <input
-          type="display"
-          disabled
-          placeholder="  -----------------------------"
-        />
+        <p id="display" class="text">0</p>
       </div>
       <div class="calcInt">
         <button class="number" id="1">1</button>
@@ -34,9 +30,9 @@
         <button class="number" id="8">8</button>
         <button class="number" id="9">9</button>
         <button class="operator" id="*">*</button>
-        <button class="clear">AC</button>
+        <button class="clear" id="clear">AC</button>
         <button class="number" id="0">0</button>
-        <button class="equal">=</button>
+        <button class="equal" id="equal">=</button>
         <button class="operator" id="/">/</button>
       </div>
     </div>

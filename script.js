@@ -1,15 +1,19 @@
-// select buttons DOM 
+// select buttons DOM
 
-const calcExt = document.getElementById('calcExt');
-const display = document.getElementById('display');
-const 
+const calcExt = document.getElementById("calcExt");
+const display = document.getElementById("display");
+const buttons = calcExt.querySelectorAll("button");
 
-let firstOperand = '';
-let secondOperand = '';
+let firstOperand = "";
+let secondOperand = "";
+let operator = "";
+let value = "";
+
+const operators = ["add", "subtract", "multiply", "divide"];
 
 //addition calculation - may need to make this for infinite numbers/arrays
 
-const add = function (a, b) {
+const add = (a, b) => {
   let sum = a + b;
   return sum;
 };
@@ -18,7 +22,7 @@ const add = function (a, b) {
 
 //subtract calculation - may need to make this for infinite numbers/arrays
 
-const subtract = function (a, b) {
+const subtract = (a, b) => {
   let difference = a - b;
   return difference;
 };
@@ -27,7 +31,7 @@ const subtract = function (a, b) {
 
 //multiply calculation
 
-const multiply = function (a, b) {
+const multiply = (a, b) => {
   let product = a * b;
   return product;
 };
@@ -36,7 +40,7 @@ const multiply = function (a, b) {
 
 //divide calculation
 
-const divide = function (a, b) {
+const divide = (a, b) => {
   let quotient = a / b;
   return quotient;
 };
@@ -46,17 +50,85 @@ const divide = function (a, b) {
 //vars for both numbers and operator
 //operate function that calls mathematic functions, takes operator and 2 numbers
 
-const operate = function (num1, num2, operator) {
+function operate(num1, num2, operator) {
+  let solution;
+  let firstNum = parseInt(num1);
+  let secondNum = parseInt(num2);
   switch (operator) {
     case "+":
-      return add(num1, num2);
+      solution = add(firstNum, secondNum);
     case "-":
-      return subtract(num1, num2);
+      solution = subtract(firstNum, secondNum);
     case "*":
-      return multiply(num1, num2);
+      solution = multiply(firstNum, secondNum);
     case "/":
-      return divide(num1, num2);
+      solution = divide(firstNum, secondNum);
   }
-};
+
+  return solution;
+}
 
 //populate calculator display when clicking number buttons
+function beginCalc() {
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.id === "equal") {
+        if (firstOperand.length > 0 && secondOperand.length > 0) {
+          let result = operate(num1, num2, operator);
+          display.textContent = result;
+          firstOperand = `${result}`;
+          secondOperand = "";
+          operator = "";
+          value = `${result}`;
+        } else {
+          display.textContent = "0";
+          firstOperand = "";
+          value = "";
+        }
+      }
+
+      if (button.id === "clear") {
+        firstOperand = "";
+        secondOperand = "";
+        value = "";
+        operator = "";
+        display.textContent = "0";
+      }
+
+      switch (button.id) {
+        case "0":
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+          if (operators.includes(operator)) {
+            secondOperand += button.textContent;
+            value += button.textContent;
+            display.textContent = value;
+          } else {
+            firstOperand += button.textContent;
+            value += button.textContent;
+            display.textContent = value;
+          }
+
+        case "+":
+        case "-":
+        case "*":
+        case "/":
+          if (firstOperand.length > 0) {
+            operator = button.id;
+            if (!value == "0") {
+              value = "";
+            }
+          }
+      }
+    });
+  });
+}
+
+beginCalc();

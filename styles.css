@@ -26,7 +26,7 @@ body {
     display: grid;
     grid-template-columns:  1fr 1fr 1fr 1fr;
 }
-input {
+#display {
     font-size: 40px;
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 435px;
