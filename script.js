@@ -1,10 +1,11 @@
 // select buttons DOM 
 
-const numberBtn = document.querySelectorAll('.number');
-const operatorBtn = document.querySelectorAll('.operator');
-const clearBtn = document.querySelectorAll('.clear');
-const equalBtn = document.querySelectorAll('.equal');
-const returnSolution = document.querySelectorAll('.solution');
+const calcExt = document.getElementById('calcExt');
+const display = document.getElementById('display');
+const 
+
+let firstOperand = '';
+let secondOperand = '';
 
 //addition calculation - may need to make this for infinite numbers/arrays
 
