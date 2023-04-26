@@ -35,6 +35,10 @@ height: 105px;
 border-radius: 5px;
 background-color: #FEFEFA;
 box-shadow: black 5px 5px 1px;
+display: flex;
+justify-content: right;
+align-items: center;
+padding-right: 10px;
 }
 button {
     margin-top: 35px;

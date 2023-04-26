@@ -2,7 +2,7 @@
 
 const calcExt = document.getElementById("calcExt");
 const display = document.getElementById("display");
-const buttons = calcExt.querySelectorAll("button");
+const totalBtns = calcExt.querySelectorAll("button");
 
 let firstOperand = "";
 let secondOperand = "";
@@ -11,70 +11,73 @@ let value = "";
 
 const operators = ["add", "subtract", "multiply", "divide"];
 
-//addition calculation - may need to make this for infinite numbers/arrays
-
-const add = (a, b) => {
-  let sum = a + b;
-  return sum;
-};
-
-//add(3,2);
-
-//subtract calculation - may need to make this for infinite numbers/arrays
-
-const subtract = (a, b) => {
-  let difference = a - b;
-  return difference;
-};
-
-//subtract(3,2);
-
-//multiply calculation
-
-const multiply = (a, b) => {
-  let product = a * b;
-  return product;
-};
-
-//multiply(3,2);
-
-//divide calculation
-
-const divide = (a, b) => {
-  let quotient = a / b;
-  return quotient;
-};
-
-//divide(3,2);
-
 //vars for both numbers and operator
 //operate function that calls mathematic functions, takes operator and 2 numbers
 
-function operate(num1, num2, operator) {
+function operate(operator, num1, num2) {
   let solution;
   let firstNum = parseInt(num1);
   let secondNum = parseInt(num2);
   switch (operator) {
-    case "+":
+    case "add":
       solution = add(firstNum, secondNum);
-    case "-":
+      break;
+    case "subtract":
       solution = subtract(firstNum, secondNum);
-    case "*":
+      break;
+    case "multiply":
       solution = multiply(firstNum, secondNum);
-    case "/":
+      break;
+    case "divide":
       solution = divide(firstNum, secondNum);
+      break;
   }
 
   return solution;
 }
 
+//addition calculation - may need to make this for infinite numbers/arrays
+
+function add(a, b) {
+  return a + b;
+}
+
+//add(3,2);
+
+//subtract calculation - may need to make this for infinite numbers/arrays
+
+function subtract(a, b) {
+  return a - b;
+
+}
+
+//subtract(3,2);
+
+//multiply calculation
+
+function multiply(a, b) {
+ return a * b;
+
+}
+
+//multiply(3,2);
+
+//divide calculation
+
+function divide(a, b) {
+  return b === 0 ? 0 : a / b;
+
+}
+
+//divide(3,2);
+
 //populate calculator display when clicking number buttons
 function beginCalc() {
-  buttons.forEach((button) => {
+  totalBtns.forEach(button => {
     button.addEventListener("click", () => {
       if (button.id === "equal") {
         if (firstOperand.length > 0 && secondOperand.length > 0) {
-          let result = operate(num1, num2, operator);
+          let result = operate(operator, firstOperand, secondOperand);
           display.textContent = result;
           firstOperand = `${result}`;
           secondOperand = "";
@@ -115,11 +118,11 @@ function beginCalc() {
             value += button.textContent;
             display.textContent = value;
           }
-
-        case "+":
-        case "-":
-        case "*":
-        case "/":
+            break;
+        case "add":
+        case "subtract":
+        case "multiply":
+        case "divide":
           if (firstOperand.length > 0) {
             operator = button.id;
             if (!value == "0") {
